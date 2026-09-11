@@ -1,3 +1,0 @@
-import { SiteHeader } from '@/components/site-header';import { SiteFooter } from '@/components/site-footer';import { CourseCard } from '@/components/course-card';import { getCourses } from '@/lib/data';
-export const metadata={title:'Maths Courses'}
-export default async function Page(){const courses=(await getCourses()).filter(c=>c.category==='Maths'||c.category==='Combo');return <><SiteHeader/><section className="pageHero"><div className="container"><h1>Maths Courses</h1><p>Foundation, fast calculation, arithmetic, shortcuts and competitive exam practice.</p></div></section><section className="section"><div className="container courseGrid">{courses.map(c=><CourseCard key={c.id} course={c}/>)}</div></section><SiteFooter/></>}
