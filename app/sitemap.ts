@@ -1,0 +1,2 @@
+import type { MetadataRoute } from 'next';import { demoCourses } from '@/lib/demo-data';
+export default function sitemap():MetadataRoute.Sitemap{const base=process.env.NEXT_PUBLIC_APP_URL||'https://savrdheducation.com';const pages=['','/courses','/courses/english','/courses/maths','/about','/amol-sir','/live-classes','/certificates','/contact','/terms','/privacy','/refund-policy'];return [...pages.map(p=>({url:`${base}${p}`,lastModified:new Date()})),...demoCourses.map(c=>({url:`${base}/course/${c.slug}`,lastModified:new Date()}))]}

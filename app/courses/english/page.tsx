@@ -1,0 +1,3 @@
+import { SiteHeader } from '@/components/site-header';import { SiteFooter } from '@/components/site-footer';import { CourseCard } from '@/components/course-card';import { getCourses } from '@/lib/data';
+export const metadata={title:'English Courses'}
+export default async function Page(){const courses=(await getCourses()).filter(c=>c.category==='English'||c.category==='Combo');return <><SiteHeader/><section className="pageHero"><div className="container"><h1>English Courses</h1><p>Grammar, vocabulary, speaking and competitive English with structured practice.</p></div></section><section className="section"><div className="container courseGrid">{courses.map(c=><CourseCard key={c.id} course={c}/>)}</div></section><SiteFooter/></>}

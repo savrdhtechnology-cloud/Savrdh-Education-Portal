@@ -1,0 +1,3 @@
+import Link from 'next/link'
+import { Logo } from '@/components/logo'
+export function SiteHeader(){return <header className="siteHeader"><div className="container navWrap"><Logo/><nav className="desktopNav"><Link href="/">Home</Link><Link href="/courses">Courses</Link><Link href="/live-classes">Live Classes</Link><Link href="/about">About</Link><Link href="/certificates">Certificates</Link><Link href="/contact">Contact</Link></nav><div className="navActions"><Link className="btn btnGhost" href="/login">Login</Link><Link className="btn btnGold" href="/register">Sign Up</Link></div></div></header>}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 900" role="img" aria-labelledby="t d">
+<title id="t">Amol Sir - Head Educator</title><desc id="d">Savrdh Education branded educator portrait placeholder.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7c51e"/><stop offset="1" stop-color="#fff3a8"/></linearGradient><linearGradient id="shirt" x1="0" x2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#dfeaf5"/></linearGradient></defs>
+<rect width="760" height="900" fill="url(#bg)"/><path d="M0 760L760 520V900H0Z" fill="#061d3d" opacity=".12"/>
+<circle cx="380" cy="290" r="145" fill="#b77b55"/><path d="M245 285c10-120 85-170 160-160 70 8 120 66 123 155-45-50-90-72-150-70-55 2-94 30-133 75Z" fill="#15191f"/>
+<rect x="250" y="263" width="115" height="58" rx="18" fill="none" stroke="#062449" stroke-width="16"/><rect x="395" y="263" width="115" height="58" rx="18" fill="none" stroke="#062449" stroke-width="16"/><path d="M365 290h30" stroke="#062449" stroke-width="12"/><path d="M318 380c42 34 82 35 124 0" fill="none" stroke="#563425" stroke-width="12" stroke-linecap="round"/>
+<path d="M170 850c20-205 95-315 210-315s190 110 210 315Z" fill="url(#shirt)"/><path d="M380 535v315" stroke="#c3d1df" stroke-width="10"/><path d="M200 620h360" stroke="#ffffff" stroke-width="8" opacity=".6"/>
+<rect x="40" y="50" width="300" height="110" rx="20" fill="#061d3d"/><text x="65" y="98" fill="#f7c51e" font-size="36" font-family="Arial" font-weight="700">AMOL SIR</text><text x="65" y="135" fill="#ffffff" font-size="22" font-family="Arial">HEAD EDUCATOR</text>
+<text x="380" y="875" text-anchor="middle" fill="#061d3d" font-size="22" font-family="Arial" font-weight="700">SAVRDH EDUCATION</text>
+</svg>

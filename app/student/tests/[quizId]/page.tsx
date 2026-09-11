@@ -1,0 +1,1 @@
+import { QuizRunner } from '@/components/quiz-runner';export default async function Page({params}:{params:Promise<{quizId:string}>}){const {quizId}=await params;return <><div className="pageHead"><div><h1>Course Quiz</h1><p>Submit once you have answered the available questions.</p></div></div><QuizRunner quizId={quizId}/></>}

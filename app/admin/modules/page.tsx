@@ -1,0 +1,1 @@
+import { AdminResourceManager } from '@/components/admin-resource-manager';import { ADMIN_RESOURCES } from '@/lib/admin-resources';export default function Page(){const config=ADMIN_RESOURCES['modules'];return <AdminResourceManager resource="modules" config={config}/>}
