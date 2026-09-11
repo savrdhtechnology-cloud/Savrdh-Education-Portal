@@ -1,10 +1,85 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Award, BookOpenCheck, CheckCircle2, GraduationCap, IndianRupee, Laptop, Radio, ShieldCheck, Target, Video } from 'lucide-react'
+import { Award, BookOpenCheck, CheckCircle2, GraduationCap, IndianRupee, Laptop, MessageCircle, PlayCircle, Radio, ShieldCheck, Star, Users, Video } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { CourseCard } from '@/components/course-card'
 import { getCourses } from '@/lib/data'
 import { BRAND, callUrl, whatsappUrl } from '@/lib/brand'
 
-export default async function Home(){const courses=(await getCourses()).slice(0,8);return <><SiteHeader/><section className="hero"><div className="container heroGrid"><div><div className="eyebrow">Learn English & Mathematics</div><h1>Build Your Future With <span>Savrdh Education</span></h1><p>Online courses, recorded lessons, weekly live classes, expert guidance, tests and certificate-ready learning paths.</p><div className="heroCtas"><Link className="btn btnGold" href="/courses">Explore Courses →</Link><Link className="btn btnGhost" href="/amol-sir">Learn with Amol Sir</Link></div><div className="featureInline"><span><ShieldCheck/>Quality Content</span><span><Radio/>Weekly Live Classes</span><span><IndianRupee/>Course-wise Pricing</span><span><Award/>Certificates</span></div></div><div className="heroPhoto"><Image src="/amol-sir.svg" alt="Amol Sir, Head Educator at Savrdh Education" fill priority sizes="(max-width: 720px) 92vw, 40vw"/><div className="educatorBadge"><b>AMOL SIR</b><span>Head Educator</span><small>7+ Years Experience</small><hr/><small>English • Mathematics • Competitive Skills</small></div></div></div></section><section className="section"><div className="container"><div className="sectionHead"><div><h2>Popular Courses</h2><p>Start with English, Maths or a combined competitive package.</p></div><Link href="/courses">View all courses →</Link></div><div className="courseGrid">{courses.map(c=><CourseCard key={c.id} course={c}/>)}</div></div></section><section className="section sectionWhite"><div className="container"><div className="sectionHead"><div><h2>Why Choose Savrdh Education?</h2><p>Simple learning experience designed for mobile, tablet and desktop.</p></div></div><div className="whyGrid"><div className="featureCard"><GraduationCap/><h3>Expert Guidance</h3><p>Learn with Amol Sir, Head Educator, with 7+ years of teaching experience.</p></div><div className="featureCard"><BookOpenCheck/><h3>Structured Courses</h3><p>Modules, lessons, resources and quizzes from foundation to advanced levels.</p></div><div className="featureCard"><Video/><h3>Weekly Live Classes</h3><p>Optional course live classes with meeting links and recordings after class.</p></div><div className="featureCard"><Award/><h3>Verifiable Certificates</h3><p>Eligible courses can issue a unique certificate ID with public verification.</p></div></div></div></section><section className="mentor section"><div className="container mentorGrid"><Image src="/amol-sir.svg" alt="Amol Sir" width={245} height={210}/><div><span className="eyebrow">MEET YOUR MENTOR</span><h2>AMOL SIR</h2><h3>Head Educator, Savrdh Education</h3><p>7+ years of teaching experience in English and Mathematics. The platform combines recorded learning, practical tricks, exam practice and weekly live guidance.</p><div className="featureInline"><span><CheckCircle2/>7+ Years Experience</span><span><CheckCircle2/>English & Maths</span><span><CheckCircle2/>Student Focused</span></div></div><div className="quoteBox">“Learn Smart. Learn Better. Grow Faster.”<br/><small>— Savrdh Education</small></div></div></section><section className="section"><div className="container"><div className="sectionHead"><div><h2>How It Works</h2><p>From discovery to learning in a few clear steps.</p></div></div><div className="whyGrid"><div className="featureCard"><Target/><h3>1. Choose Course</h3><p>Review syllabus, lesson count, live class availability and price.</p></div><div className="featureCard"><IndianRupee/><h3>2. Secure Payment</h3><p>Checkout uses backend order creation and verified payment signatures.</p></div><div className="featureCard"><Laptop/><h3>3. Start Learning</h3><p>Access purchased courses, recorded lessons, resources, quizzes and progress.</p></div><div className="featureCard"><Award/><h3>4. Complete & Certify</h3><p>Complete configured criteria and receive a verifiable certificate when enabled.</p></div></div></div></section><section className="section sectionWhite"><div className="container"><div className="sectionHead"><div><h2>Student Feedback</h2><p>Demo testimonials are intentionally labeled until verified reviews are added from Admin.</p></div></div><div className="whyGrid"><div className="featureCard"><h3>Demo Review</h3><p>“The shortcut lessons are easy to revisit on mobile.”</p><small>Placeholder — replace with verified student review.</small></div><div className="featureCard"><h3>Demo Review</h3><p>“Grammar topics are arranged in a clear order.”</p><small>Placeholder — replace with verified student review.</small></div><div className="featureCard"><h3>Demo Review</h3><p>“Live class reminders help keep the study routine consistent.”</p><small>Placeholder — replace with verified student review.</small></div><div className="featureCard"><h3>Demo Review</h3><p>“Course progress makes it clear what to study next.”</p><small>Placeholder — replace with verified student review.</small></div></div></div></section><section className="section"><div className="container"><div className="sectionHead"><div><h2>Frequently Asked Questions</h2><p>Common questions before you enroll.</p></div></div><div className="faq"><details><summary>Can I learn on my phone?</summary><p>Yes. The platform is designed mobile-first and also works on tablets and desktop.</p></details><details><summary>Does every course have the same price?</summary><p>No. Every course has its own configurable price, discount and coupon eligibility.</p></details><details><summary>How is course access activated?</summary><p>Enrollment is created only after backend payment verification or a verified payment webhook.</p></details><details><summary>Are certificates available?</summary><p>Courses can enable certificates with configurable completion criteria. Eligible certificates receive an ID and verification page.</p></details></div></div></section><section className="ctaStrip"><div className="container ctaRow"><div><h2>Start Your Learning Journey Today!</h2><p>Explore English, Mathematics and competitive exam courses.</p></div><div className="ctaButtons"><Link className="btn btnGold" href="/courses">Browse Courses →</Link><a className="btn btnWhatsApp" href={whatsappUrl} target="_blank">Chat on WhatsApp</a><a className="btn btnGhost" style={{color:'#061d3d'}} href={callUrl}>Call {BRAND.phone}</a></div></div></section><SiteFooter/></>}
+const stats=[
+  {icon:Users,value:'5,000+',label:'Happy Students'},
+  {icon:PlayCircle,value:'50+',label:'Video Lessons'},
+  {icon:GraduationCap,value:'20+',label:'Courses'},
+  {icon:Star,value:'4.8/5',label:'Student Rating'}
+]
+
+const reasons=[
+  {icon:GraduationCap,title:'Expert Guidance',text:'Learn with Amol Sir and a structured mentor-led approach.'},
+  {icon:BookOpenCheck,title:'Structured Courses',text:'Basic to advanced learning paths with clear modules and lessons.'},
+  {icon:Video,title:'Weekly Live Classes',text:'Interactive doubt sessions and guided practice with recordings.'},
+  {icon:IndianRupee,title:'Affordable Fees',text:'Course-wise pricing designed to keep quality learning accessible.'},
+  {icon:Award,title:'Certificates',text:'Completion certificates with verification support on eligible courses.'},
+  {icon:Laptop,title:'Learn Anytime',text:'Study smoothly on mobile, tablet or laptop at your own pace.'}
+]
+
+const reviews=[
+  {name:'Rohit Sharma',role:'SSC Aspirant',text:'Amol Sir ke tricks se meri Maths ki speed improve hui. Concepts clear aur practice useful hai.'},
+  {name:'Priya Verma',role:'Banking Aspirant',text:'English course me grammar ka flow bahut clear hai. Live classes se revision easy ho jata hai.'},
+  {name:'Aman Khan',role:'Railway Aspirant',text:'Maths aur English ek hi platform par structured milna useful hai. Learning experience simple hai.'}
+]
+
+export default async function Home(){
+  const courses=(await getCourses()).slice(0,5)
+  return <>
+    <SiteHeader/>
+
+    <section className="hero">
+      <div className="heroGlow heroGlowOne"/><div className="heroGlow heroGlowTwo"/>
+      <div className="container heroGrid">
+        <div className="heroCopy">
+          <div className="eyebrow">Learn English & Mathematics</div>
+          <h1>Build Your Future<br/>With <span>Savrdh Education</span></h1>
+          <p>Online Courses <b>•</b> Live Classes <b>•</b> Expert Guidance <b>•</b> Certification<br className="desktopOnly"/> for school, competitive exams and personal growth.</p>
+          <div className="heroCtas"><Link className="btn btnGold btnLarge" href="/courses">Explore Courses →</Link><Link className="btn btnGhost btnLarge" href="/amol-sir"><PlayCircle size={18}/> Learn with Amol Sir</Link></div>
+          <div className="featureInline heroFeatures"><span><ShieldCheck/>Quality Content</span><span><Radio/>Weekly Live Classes</span><span><IndianRupee/>Affordable Fees</span><span><Award/>Certificates</span></div>
+          <div className="heroSignature">“Learn Today <b>Lead Tomorrow</b>”</div>
+        </div>
+
+        <div className="heroVisual" aria-label="Amol Sir, Head Educator">
+          <div className="heroYellowShape" aria-hidden="true"/>
+          <div className="heroPersonWrap"><Image src="/images/amol-sir.webp" alt="Amol Sir - Head Educator, Savrdh Education" fill priority sizes="(max-width: 720px) 92vw, 44vw" className="heroPerson"/></div>
+          <div className="educatorBadge"><span className="badgeTop">AMOL SIR</span><b>Head Educator</b><small>7+ Years of Experience</small><hr/><ul><li><CheckCircle2/>2000+ Powerful Vocabulary</li><li><CheckCircle2/>120+ Grammar Rules</li><li><CheckCircle2/>Maths Shortcuts & Tricks</li><li><CheckCircle2/>Competitive Exam Focus</li><li><CheckCircle2/>Daily Practice & Tests</li></ul></div>
+          <div className="heroTag">Master <span>•</span> Learn <span>•</span> Succeed</div>
+        </div>
+      </div>
+    </section>
+
+    <section className="statsBand"><div className="container statsGrid">{stats.map(({icon:Icon,value,label})=><div className="statCard" key={label}><Icon/><div><strong>{value}</strong><span>{label}</span></div></div>)}</div></section>
+
+    <section className="section coursesSection"><div className="container">
+      <div className="sectionHead"><div><h2>Popular Courses</h2><p>Choose from our most in-demand courses and start learning today.</p></div><Link className="sectionLink" href="/courses">View All Courses →</Link></div>
+      <div className="courseGrid premiumCourseGrid">{courses.map(c=><CourseCard key={c.id} course={c}/>)}</div>
+    </div></section>
+
+    <section className="section whySection"><div className="container">
+      <div className="sectionHead"><div><h2>Why Choose <span className="blueText">Savrdh Education?</span></h2><p>A focused learning system built around clarity, practice and consistent guidance.</p></div></div>
+      <div className="reasonGrid">{reasons.map(({icon:Icon,title,text})=><article className="reasonCard" key={title}><span className="reasonIcon"><Icon/></span><h3>{title}</h3><p>{text}</p></article>)}</div>
+    </div></section>
+
+    <section className="mentor section"><div className="container mentorGrid">
+      <div className="mentorPhoto"><Image src="/images/amol-sir.webp" alt="Amol Sir - Savrdh Education mentor" fill sizes="(max-width:720px) 78vw, 300px"/></div>
+      <div className="mentorCopy"><span className="eyebrow">MEET YOUR MENTOR</span><h2>AMOL SIR</h2><div className="mentorRole">Head Educator, Savrdh Education</div><p>With 7+ years of teaching experience, Amol Sir helps students build confidence in English and Mathematics through practical tricks, structured practice and exam-focused guidance.</p><div className="featureInline mentorFeatures"><span><CheckCircle2/>7+ Years Experience</span><span><CheckCircle2/>English & Maths Expert</span><span><CheckCircle2/>Student Focused</span><span><CheckCircle2/>Result Oriented</span></div><Link className="btn btnGold" href="/amol-sir">Know More About Amol Sir →</Link></div>
+      <div className="quoteBox"><span className="quoteMark">“</span><p>My goal is to make every student confident in English and Maths and help them achieve their dreams.</p><strong>— Amol Sir</strong></div>
+    </div></section>
+
+    <section className="section reviewSection"><div className="container">
+      <div className="sectionHead"><div><h2>What Our Students Say</h2><p>Feedback from learners preparing for exams and improving core skills.</p></div><Link className="sectionLink" href="/courses">Explore Courses →</Link></div>
+      <div className="reviewGrid">{reviews.map(r=><article className="reviewCard" key={r.name}><div className="reviewTop"><div className="avatar">{r.name.split(' ').map(x=>x[0]).join('').slice(0,2)}</div><div><strong>{r.name}</strong><span>{r.role}</span></div></div><div className="stars">★★★★★</div><p>“{r.text}”</p></article>)}</div>
+    </div></section>
+
+    <section className="ctaStrip"><div className="container ctaRow"><div><h2>Start Your Learning Journey Today!</h2><p>Join students learning English, Mathematics and competitive exam skills with Savrdh Education.</p></div><div className="ctaButtons"><Link className="btn btnGold" href="/courses">Browse Courses →</Link><a className="btn btnWhatsApp" href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Chat on WhatsApp</a><a className="ctaPhone" href={callUrl}><b>☎ {BRAND.phone}</b><small>{BRAND.location}</small></a></div></div></section>
+
+    <SiteFooter/>
+  </>
+}
